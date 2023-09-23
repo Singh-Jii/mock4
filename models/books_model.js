@@ -1,6 +1,6 @@
-const mongo = require("mongoose");
+const mongoose = require("mongoose");
 
-const model_Schema = new mongo.Schema({
+const model_Schema = new mongoose.Schema({
   Title: { type: String, require: true },
   Author: { type: String, require: true },
   Genre: { type: String, require: true, enum: ["Fiction", "Science", "Comic"] },
@@ -10,6 +10,6 @@ const model_Schema = new mongo.Schema({
   versionKey: false
 });
 
-const my_books_model = mongo.model("Book", model_Schema);
+const my_books_model = mongoose.model("Book", model_Schema);
 
 module.exports = { my_books_model };
